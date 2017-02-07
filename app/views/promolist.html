@@ -1,0 +1,563 @@
+<link rel="stylesheet" href="styles/left-menu.css"/>
+<script src="scripts/modernizr.min.js"></script>
+<script src="scripts/jquery.nicescroll.js"></script>
+<script src="scripts/left-menu.js"></script>
+
+<section class="sticky-header">
+  <!-- left side start-->
+  <div class="left-side sticky-left-side left-menu-body">
+    <!--logo and iconic logo start-->
+    <div class="logo">
+      <a href="#/">
+        <img src="images/HPE_logo.png" alt="">
+      </a>
+    </div>
+
+    <div class="logo-icon text-center">
+      <a href="#/">
+        <img src="images/logo_icon.png" alt="">
+      </a>
+    </div>
+    <!--logo and iconic logo end-->
+    <!--<leftmenu-directive></leftmenu-directive>-->
+	<div class="left-side-inner">
+	      <!--sidebar nav start-->
+	      <ul class="nav nav-pills nav-stacked custom-nav">
+	        <li class="menu-list">
+	          <a href="#/promo"> <i class="fa fa-th"></i>
+	            <span>1-Budgeting & Planning</span>
+	          </a>
+	        </li>
+
+	        <li class="menu-list">
+	          <a href=""> <i class="fa fa-clock-o"></i>
+	            <span>2-Contra Performance</span>
+	          </a>
+	        </li>
+
+	        <li class="menu-list">
+	          <a href="">
+	            <i class="fa fa-balance-scale"></i>
+	            <span>3-Competitive Pricing</span>
+	          </a>
+	        </li>
+
+	        <li class="menu-list" 
+	            ng-class="{true: 'nav-active', false: 'inactive'}
+	            [isPromoListActive || isPromoNewActive || isPromoNew1Active || isPromoNew2Active || isPromoNew3Active || isPromoNew4Active || isReadOnly1Active ]">
+	          <a href="">
+	            <i class="fa fa-bar-chart"></i>
+	            <span>4-ROI Analysis</span>
+	          </a>
+	          <ul class="sub-menu-list">
+	            <li ng-class="{true: 'active', false: 'inactive'}[isPromoListActive]">
+	              <a href="#/promolist">View/Edit PoRs</a>
+	            </li>
+	            <li ng-class="{true: 'active', false: 'inactive'}[isPromoNewActive]">
+	              <a href="#/promonew">Create new PoR</a>
+	            </li>
+	            <li ng-class="{true: 'active', false: 'inactive'}[isPromoNew1Active]">
+	              <a href="#/promonew1">No Touch New 1</a>
+	            </li>
+	            <li ng-class="{true: 'active', false: 'inactive'}[isPromoNew2Active]">
+	              <a href="#/promonew2">No Touch New 2</a>
+	            </li>    
+	            <li ng-class="{true: 'active', false: 'inactive'}[isPromoNew3Active]">
+	              <a href="#/promonew3">No Touch New 3</a>
+	            </li>
+	            <li ng-class="{true: 'active', false: 'inactive'}[isPromoNew4Active]">
+	              <a href="#/promonew4">No Touch New 4</a>
+	            </li> 
+	            <li ng-class="{true: 'active', false: 'inactive'}[isReadOnly1Active]">
+	              <a href="#/viewmode">View Mode</a>
+	            </li>                   
+	          </ul>
+	        </li>
+
+	        <li class="menu-list">
+	          <a href="">
+	            <i class="fa fa-signal"></i>
+	            <span>5-Execute Campaign</span>
+	          </a>
+	        </li>
+
+	        <li>
+	          <a href="">
+	            <i class="fa fa-dashboard"></i>
+	            <span>6-Weekly Tracking</span>
+	          </a>
+	        </li>
+
+	        <li class="menu-list">
+	          <a href="">
+	            <i class="fa fa-briefcase"></i>
+	            <span>Promo Approval</span>
+	          </a>
+	          <ul class="sub-menu-list">
+	            <li>
+	              <a href="#/approval">Promo Approval</a>
+	            </li>
+	          </ul>
+	        </li>
+
+	        <li class="menu-list" ng-class="{true: 'nav-active', false: 'inactive'}[isApprovalActive]">
+	          <a href="">
+	            <i class="fa fa-cogs"></i>
+	            <span>Approver Management</span>
+	          </a>
+	          <ul class="sub-menu-list">
+	            <li ng-class="{true: 'active', false: 'inactive'}[isApprovalActive]">
+	              <a href="#/approver">Approver Group</a>
+	            </li>
+	            <li>
+	              <a href="#/approver/edit">Approver Edit</a>
+	            </li>
+	          </ul>
+	        </li>
+	      </ul>
+	      <!--sidebar nav end-->
+	</div>    
+  </div>
+  <!-- left side end-->
+
+  <!-- main content start-->
+  <div class="main-content" >
+    <!-- header section start-->
+    <div class="header-section">
+      <!--toggle button start-->
+      <a class="toggle-btn"> 
+        <i class="fa fa-bars"></i>
+      </a>
+      <!--toggle button end-->
+      <span class="droid-icon">
+        <img src="images/droid.png" class="projecticon">
+      </span>
+
+      <!--toggle button end-->
+      <div class="menu-right"> 
+        <i class="fa fa-user"></i>
+        <span>Jason Zhang(Administrator)</span>
+      </div>
+    </div>
+    <!-- header section end-->
+
+    <!--body wrapper start-->
+    <div class="wrapper">
+
+	<uib-accordion>
+		<div uib-accordion-group class="panel-default" is-open="status.open">
+			<uib-accordion-heading>
+				Filter 
+				<span class="small-text">(Show/Hide)</span> 
+				<i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
+			</uib-accordion-heading>
+		  
+
+			<div class="form-group">
+				<form role="form">
+				  <div class="row">
+				    <div class="col-sm-5 col-md-2  col-lgf-1 col-h">
+				      <label class="nowrap">PoR ID:</label>
+				    </div>
+				    <div class="col-sm-7 col-md-4  col-lgf-3 col-h">
+				      <div class="input-group">
+				        <input type="text" class="form-control" placeholder="PoR ID..." ></div>
+				    </div>
+
+				    <div class="col-sm-5 col-md-2  col-lgf-1 col-h">
+				      <label>Region:</label>
+				    </div>
+				    <div class="col-sm-7 col-md-4  col-lgf-3 col-h">
+				      <div class="input-group">
+				        <button type="button" id="dropdownMenu1" 
+				    data-toggle="dropdown" class="btn btn-default form-control ctm-content">
+				          <span class="btntext zselect">Choose Region...</span>
+				          <span class="fa fa-chevron-down pull-right icon-blue" aria-hidden="true"></span>
+				        </button>
+				        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+				          <li role="presentation">
+				            <a role="menuitem" tabindex="-1" href="#">item one</a>
+				          </li>
+				          <li role="presentation">
+				            <a role="menuitem" tabindex="-1" href="#">item two</a>
+				          </li>
+				          <li role="presentation">
+				            <a role="menuitem" tabindex="-1" href="#">item three</a>
+				          </li>
+				        </ul>
+				      </div>
+				    </div>
+				  </div>
+				  <div class="row">
+				    <div class="col-sm-5 col-md-2  col-lgf-1 col-h">
+				      <label class="nowrap">PoR Title:</label>
+				    </div>
+				    <div class="col-sm-7 col-md-4  col-lgf-3 col-h">
+				      <div class="input-group">
+				        <input type="text"  class="form-control"  placeholder="PoR Title..."></div>
+				    </div>
+
+				    <div class="col-sm-5 col-md-2  col-lgf-1 col-h">
+				      <label>Subregion:</label>
+				    </div>
+				    <div class="col-sm-7 col-md-4  col-lgf-3 col-h">
+				      <div class="input-group">
+				        <button type="button" id="dropdownMenu1" 
+				    data-toggle="dropdown" class="btn btn-default form-control ctm-content">
+				          <span class="btntext zselect">Choose Subregion...</span>
+				          <span class="fa fa-chevron-down pull-right icon-blue" aria-hidden="true"></span>
+				        </button>
+				        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+				          <li role="presentation">
+				            <a role="menuitem" tabindex="-1" href="#">item one</a>
+				          </li>
+				          <li role="presentation">
+				            <a role="menuitem" tabindex="-1" href="#">item two</a>
+				          </li>
+				          <li role="presentation">
+				            <a role="menuitem" tabindex="-1" href="#">item three</a>
+				          </li>
+				        </ul>
+				      </div>
+				    </div>
+				  </div>
+				  <div class="row">
+				    <div class="col-sm-5 col-md-2  col-lgf-1 col-h">
+				      <label class="nowrap">PoR Status:</label>
+				    </div>
+				    <div class="col-sm-7 col-md-4  col-lgf-3 col-h">
+				      <div class="input-group">
+				        <button type="button" id="dropdownMenu1" 
+				    data-toggle="dropdown" class="btn btn-default form-control ctm-content">
+				          <span class="btntext zselect">Choose PoR Status...</span>
+				          <span class="fa fa-chevron-down pull-right icon-blue" aria-hidden="true"></span>
+				        </button>
+				        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+				          <li role="presentation">
+				            <a role="menuitem" tabindex="-1" href="#">item one</a>
+				          </li>
+				          <li role="presentation">
+				            <a role="menuitem" tabindex="-1" href="#">item two</a>
+				          </li>
+				          <li role="presentation">
+				            <a role="menuitem" tabindex="-1" href="#">item three</a>
+				          </li>
+				        </ul>
+
+				      </div>
+				    </div>
+
+				    <div class="col-sm-5 col-md-2  col-lgf-1 col-h">
+				      <label>BU:</label>
+				    </div>
+				    <div class="col-sm-7 col-md-4  col-lgf-3 col-h">
+				      <div class="input-group">
+				        <button type="button" id="dropdownMenu1" 
+				    data-toggle="dropdown" class="btn btn-default form-control ctm-content">
+				          <span class="btntext zselect">Choose BU...</span>
+				          <span class="fa fa-chevron-down pull-right icon-blue" aria-hidden="true"></span>
+				        </button>
+				        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+				          <li role="presentation">
+				            <a role="menuitem" tabindex="-1" href="#">item one</a>
+				          </li>
+				          <li role="presentation">
+				            <a role="menuitem" tabindex="-1" href="#">item two</a>
+				          </li>
+				          <li role="presentation">
+				            <a role="menuitem" tabindex="-1" href="#">item three</a>
+				          </li>
+				        </ul>
+				      </div>
+				    </div>
+				  </div>
+				  <div class="row">
+				    <div class="col-sm-5 col-md-2  col-lgf-1 col-h">
+				      <label class="nowrap">Planning Period:</label>
+				    </div>
+				    <div class="col-sm-7 col-md-4  col-lgf-3 col-h">
+				      <div class="input-group">
+				        <input type="text"  class="form-control"  placeholder="Planning Period..."></div>
+				    </div>
+
+				    <div class="col-sm-5 col-md-2  col-lgf-1 col-h">
+				      <label>Country:</label>
+				    </div>
+				    <div class="col-sm-7 col-md-4  col-lgf-3 col-h">
+				      <div class="input-group">
+				        <button type="button" id="dropdownMenu1" 
+				    data-toggle="dropdown" class="btn btn-default form-control ctm-content">
+				          <span class="btntext zselect">Choose Country...</span>
+				          <span class="fa fa-chevron-down pull-right icon-blue" aria-hidden="true"></span>
+				        </button>
+				        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+				          <li role="presentation">
+				            <a role="menuitem" tabindex="-1" href="#">item one</a>
+				          </li>
+				          <li role="presentation">
+				            <a role="menuitem" tabindex="-1" href="#">item two</a>
+				          </li>
+				          <li role="presentation">
+				            <a role="menuitem" tabindex="-1" href="#">item three</a>
+				          </li>
+				        </ul>
+
+				      </div>
+				    </div>
+				  </div>
+				  <div class="row">
+				    <div class="col-sm-5 col-md-2  col-lgf-1 col-h">
+				      <label>Approval Status:</label>
+				    </div>
+				    <div class="col-sm-7 col-md-4  col-lgf-3 col-h">
+				      <div class="input-group">
+				        <button type="button" id="dropdownMenu1" 
+				    data-toggle="dropdown" class="btn btn-default form-control ctm-content">
+				          <span class="btntext zselect">Choose Approval Status...</span>
+				          <span class="fa fa-chevron-down pull-right icon-blue" aria-hidden="true"></span>
+				        </button>
+				        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+				          <li role="presentation">
+				            <a role="menuitem" tabindex="-1" href="#">item one</a>
+				          </li>
+				          <li role="presentation">
+				            <a role="menuitem" tabindex="-1" href="#">item two</a>
+				          </li>
+				          <li role="presentation">
+				            <a role="menuitem" tabindex="-1" href="#">item three</a>
+				          </li>
+				        </ul>
+				      </div>
+				    </div>
+				  </div>
+				  <div class="row top-padding5">
+				    <div class="col-md-12">
+				      <button type="button" class="btn btn-primary right-margin10">Search</button>
+				      <button type="button" class="btn btn-primary">Reset</button>
+				    </div>
+				  </form>
+				</div>
+			</div>
+          
+		</div>
+	</uib-accordion>
+
+
+	<div class="row top-margin10">
+	<div class="col-sm-12 col-md-12  col-lgf-12">
+	  <div class="btn-group right-margin10" role="group" aria-label="...">
+	    <button type="button" class="btn btn-primary">View/Edit PoR</button>
+	    <button type="button" class="btn btn-danger" data-toggle="modal" 
+	data-target="#myModalDelete">Delete</button>
+	    <button type="button" class="btn btn-primary">Clone to New PoR</button>            
+	  </div>
+
+	  <div class="btn-group right-margin10" role="group" aria-label="...">
+	    <button type="button" class="btn btn-primary">Add to Merge List</button>
+	    <button type="button" class="btn btn-primary">Merge to New PoR</button>
+	  </div>
+
+	  <div class="btn-group" role="group" aria-label="...">
+	    <button type="button" class="btn btn-primary" data-toggle="modal" 
+	data-target="#myModal">Withdraw Rejected and Pending Status</button>
+	    <button type="button" class="btn btn-primary" data-toggle="modal" 
+	data-target="#myModalStatus">View Approval Status</button>
+	  </div> 
+	</div>  
+	</div>
+
+      <div class="row top-margin5">
+        <div class="ol-sm-12 col-md-12 col-lgf-12">
+          <div class="input-group">
+            <span class="input-group-addon">
+              <i class="fa fa-search" aria-hidden="true"></i>
+            </span>
+            <input class="form-control ng-pristine ng-valid ng-touched" placeholder="Quick search by keyword..." type="text" ng-model="gridOptions.quickFilterText"></div>
+        </div>
+      </div>
+
+      <div id="grid1" ui-grid="gridOptions" class="grid top-margin5" ui-grid-auto-resize></div>
+
+        <!-- （Modal）start -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" 
+      aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" 
+               data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Approval Detail Status</h4>
+              </div>
+              <div class="modal-body">
+                Do you really want to withdraw the approval for the selected 1 promo plan?
+
+                <div class="modal-footer">
+                  <button class="btn btn-default" type="button" ng-click="ConfirmCancel()" data-dismiss="modal">
+                      Cancel
+                  </button>
+                  <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- （Modal）end -->
+
+        <!-- （Modal）start -->
+        <div class="modal fade" id="myModalDelete" tabindex="-1" role="dialog" 
+      aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header-warning">
+                <button type="button" class="close" 
+               data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Approval Summary Status</h4>
+              </div>
+              <div class="modal-body">
+                Do you really want to delete for selected 4 promo plans?
+
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" 
+                       data-dismiss="modal">Cancel</button>
+                  <button type="button" class="btn btn-primary">OK</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- （Modal）end -->
+
+        <!-- （Modal）start -->
+        <div class="modal fade" id="myModalStatus" tabindex="-1" role="dialog" 
+      aria-labelledby="myModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-sheet">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" 
+               data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Approval Summary Status</h4>
+              </div>
+              <div class="modal-body">
+                <div>
+                  <span class="pull-right ">
+                  <span>Approved: </span> <i class="fa fa-check-circle-o table-icon-green iconPaddingLeft5 right-margin30" aria-hidden="true"></i>
+                    <span>Pending: </span> <i class="fa fa-question-circle-o table-icon-approving iconPaddingLeft5 right-margin30" aria-hidden="true"></i>
+                    <span>Rejected: </span> <i class="fa fa-ban table-icon-warning iconPaddingLeft5" aria-hidden="true"></i>
+                  </span>
+                </div>
+
+                <div class="top-margin10">
+                  <ul id="myTab2" class="nav nav-tabs">
+                    <li class="active tab-title"><a href="javascript:void(0);#Networking" data-toggle="tab">HP Networking</a></li>
+                    <li class="tab-title"><a href="javascript:void(0);#Server" data-toggle="tab">HP Server</a></li>
+                    <li class="tab-title"><a href="javascript:void(0);#Storage" data-toggle="tab">HP Storage</a></li>
+                    <li class="tab-title"><a href="javascript:void(0);#Switching"  data-toggle="tab">HP Switching</a></li>
+                  </ul>
+                </div>
+
+                <div id="myTab2Content" class="tab-content top-margin10">
+                  <div class="tab-pane fade in active" id="Networking">
+                    <table class="table table-condensed table-bordered">
+                      <tbody>
+                        <tr>
+                          <td class="text-center process-guadrail-approved">Level1</td>
+                          <td colspan=2 class="text-center process-guadrail-Current">Level2</td>
+                          <td colspan=2 class="text-center process-guadrail-default">Level3</td>
+                          <td class="text-center process-guadrail-default">Level4</td>
+                        </tr>
+                        <tr class="text-center">
+                          <td class="process-guadrail-approved pointer">
+                            Group1 
+                          </td>
+                          <td class="process-guadrail-approved pointer">
+                            Group2 
+                          </td>
+                          <td class="process-guadrail-Current pointer">
+                            Group3 
+                            </td>
+                          <td class="process-guadrail-default pointer">
+                            Group4 
+                          </td>
+                          <td class="process-guadrail-default pointer">
+                            Group5 
+                          </td>
+                          <td class="process-guadrail-default pointer">
+                            Group6
+                          </td>
+                        </tr>
+                        
+                        <tr class="text-center">
+                          <td class="">
+                            <div class="tb-padding10">
+                              wen.zhang3@hpe.com <i class="fa fa-check-circle-o fa-2x table-icon-green" aria-hidden="true"></i>
+                            </div>
+                            <div class="tb-padding10">
+                              wen.zhang3@hpe.com <i class="fa fa-check-circle-o fa-2x table-icon-green" aria-hidden="true"></i>
+                            </div>                
+                          </td>
+                          <td>
+                            <div class="tb-padding10">
+                              wen.zhang3@hpe.com <i class="fa fa-check-circle-o fa-2x table-icon-green" aria-hidden="true"></i>
+                            </div>
+                            <div class="tb-padding10">
+                              wen.zhang3@hpe.com <i class="fa fa-check-circle-o fa-2x table-icon-green" aria-hidden="true"></i>
+                            </div>                
+                          </td>
+                          <td>
+                            <div class="tb-padding10">
+                              wen.zhang3@hpe.com <i class="fa fa-check-circle-o table-icon-green fa-2x" aria-hidden="true"></i>
+                            </div>                
+                            <div class="tb-padding10">
+                              wen.zhang3@hpe.com <i class="fa fa-ban table-icon-warning fa-2x" aria-hidden="true"></i>
+                            </div>
+                          </td>
+                          <td>
+                            <div class="tb-padding10">
+                              wen.zhang3@hpe.com <i class="fa fa-question-circle-o table-icon-approving fa-2x" aria-hidden="true"></i>
+                            </div>
+                            <div class="tb-padding10">
+                              wen.zhang3@hpe.com <i class="fa fa-question-circle-o table-icon-approving fa-2x" aria-hidden="true"></i>
+                            </div>                
+                          </td>
+                          <td>
+                            <div class="tb-padding10">
+                              wen.zhang3@hpe.com <i class="fa fa-question-circle-o table-icon-approving fa-2x" aria-hidden="true"></i>
+                            </div>
+                            <div class="tb-padding10">
+                              wen.zhang3@hpe.com <i class="fa fa-question-circle-o table-icon-approving fa-2x" aria-hidden="true"></i>
+                            </div>                
+                          </td>
+                          <td>
+                            <div class="tb-padding10">
+                              wen.zhang3@hpe.com <i class="fa fa-question-circle-o table-icon-approving fa-2x" aria-hidden="true"></i>
+                            </div>
+                            <div class="tb-padding10">
+                              wen.zhang3@hpe.com <i class="fa fa-question-circle-o table-icon-approving fa-2x" aria-hidden="true"></i>
+                            </div>                
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>           
+                  </div>
+
+                  <div class="tab-pane fade" id="Server">
+                    Server Tab Content, and add your code here.
+                  </div>
+                                  
+                  <div class="tab-pane fade" id="Storage">
+                    Storage Tab Content, and add your code here.
+                  </div>
+     
+                  <div class="tab-pane fade" id="Switching">
+                    Switching Tab Content, and add your code here.
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- （Modal）end -->
+    </div>
+  </div>  
+</section>

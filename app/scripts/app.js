@@ -15,19 +15,23 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'angular-loading-bar',
+    'ui.bootstrap',
+    'ui.grid'
+
   ])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
+        templateUrl: 'views/landing.html',
+        controller: 'LandingCtrl',
+        controllerAs: 'landing'
       })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
+      .when('/promolist', {
+        templateUrl: 'views/promolist.html',
+        controller: 'PromoListCtrl',
+        controllerAs: 'promoList'
       })
       .when('/myroute', {
         templateUrl: 'views/myroute.html',
@@ -40,6 +44,7 @@ angular
   })
 
 /*
+  Jason add:
   to fix url issue.
 */
   .config(['$locationProvider', function($locationProvider) {

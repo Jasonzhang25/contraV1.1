@@ -41,7 +41,7 @@
 				</li>
 
 				<li class="menu-list" 
-					ng-class="{true: 'nav-active', false: 'inactive'} [isPromoListActive || isNewPromoActive]">
+					ng-class="{true: 'nav-active', false: 'inactive'}[isPromoListActive || isNewPromoActive]">
 					<a href="">
 						<i class="fa fa-bar-chart"></i>
 						<span>4-ROI Analysis</span>
@@ -70,28 +70,28 @@
 					</a>
 				</li>
 
-				<li class="menu-list">
+				<li class="menu-list" ng-class="{true: 'nav-active', false: 'inactive'}[isPromoApprovalActive]">
 					<a href="">
 						<i class="fa fa-briefcase"></i>
 						<span>PoR Approval</span>
 					</a>
 					<ul class="sub-menu-list">
-						<li>
+						<li ng-class="{true: 'active', false: 'inactive'}[isPromoApprovalActive]">
 							<a href="#/promoapproval">PoR Approval</a>
 						</li>
 					</ul>
 				</li>
 
-				<li class="menu-list" ng-class="{true: 'nav-active', false: 'inactive'}[isNewPromoActive]">
+				<li class="menu-list" ng-class="{true: 'nav-active', false: 'inactive'}[isApprovalGroupListActive || isNewApprovalGroupActive]">
 					<a href="">
 						<i class="fa fa-cogs"></i>
 						<span>Approver Management</span>
 					</a>
 					<ul class="sub-menu-list">
-						<li ng-class="{true: 'active', false: 'inactive'}[isApprovalActive]">
+						<li ng-class="{true: 'active', false: 'inactive'}[isApprovalGroupListActive]">
 							<a href="#/approvalgrouplist">Approval Group List</a>
 						</li>
-						<li ng-class="{true: 'active', false: 'inactive'}[isNewPromoActive]">
+						<li ng-class="{true: 'active', false: 'inactive'}[isNewApprovalGroupActive]">
 							<a href="#/newapprovalgroup">New Approval Group</a>
 						</li>
 					</ul>

@@ -8,11 +8,6 @@
  * Controller of the contraApp
  */
 angular.module('contraApp')
-  .config(['cfpLoadingBarProvider', function(cfpLoadingBarProvider) {
-    cfpLoadingBarProvider.spinnerTemplate = '<div id="blocker"><div class="loading">Loading...</div><div class="cssload-container"><div class="cssload-speeding-wheel"></div></div></div>';
-
-    cfpLoadingBarProvider.loadingBarTemplate = '<div id="loading-bar"><div class="bar"><div class="peg"></div></div></div>';
-  }])
 .controller('PromolistCtrl', function($scope) {
     $scope.isPromoListActive = true;
 	$scope.status = {

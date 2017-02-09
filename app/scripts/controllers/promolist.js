@@ -8,7 +8,12 @@
  * Controller of the contraApp
  */
 angular.module('contraApp')
-.controller('PromoListCtrl', function($scope) {
+  .config(['cfpLoadingBarProvider', function(cfpLoadingBarProvider) {
+    cfpLoadingBarProvider.spinnerTemplate = '<div id="blocker"><div class="loading">Loading...</div><div class="cssload-container"><div class="cssload-speeding-wheel"></div></div></div>';
+
+    cfpLoadingBarProvider.loadingBarTemplate = '<div id="loading-bar"><div class="bar"><div class="peg"></div></div></div>';
+  }])
+.controller('PromolistCtrl', function($scope) {
     $scope.isPromoListActive = true;
 	$scope.status = {
 	    open: true
@@ -42,6 +47,6 @@ angular.module('contraApp')
                      {field:'owner', displayName:'Owner', minWidth:200}                     
                     ]
     };
-     
+
 });
 

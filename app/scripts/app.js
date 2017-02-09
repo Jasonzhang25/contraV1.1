@@ -31,9 +31,29 @@ angular
       })
       .when('/promolist', {
         templateUrl: 'views/promolist.html',
-        controller: 'PromoListCtrl',
-        controllerAs: 'promoList'
+        controller: 'PromolistCtrl',
+        controllerAs: 'promolist'
       })
+      .when('/newpromo', {
+        templateUrl: 'views/newpromo.html',
+        controller: 'NewpromoCtrl',
+        controllerAs: 'newpromo'
+      })      
+      .when('/newapprovalgroup', {
+        templateUrl: 'views/newapprovalgroup.html',
+        controller: 'NewapprovalgroupCtrl',
+        controllerAs: 'newapprovalgroup'
+      })
+      .when('/approvalgrouplist', {
+        templateUrl: 'views/approvalgrouplist.html',
+        controller: 'ApprovalgrouplistCtrl',
+        controllerAs: 'approvalgrouplist'
+      }) 
+      .when('/promoapproval', {
+        templateUrl: 'views/promoapproval.html',
+        controller: 'PromoapprovalCtrl',
+        controllerAs: 'promoapproval'
+      })                  
       .when('/myroute', {
         templateUrl: 'views/myroute.html',
         controller: 'MyrouteCtrl',

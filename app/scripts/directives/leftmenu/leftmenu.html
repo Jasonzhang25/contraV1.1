@@ -21,8 +21,7 @@
         </li>
 
         <li class="menu-list" 
-            ng-class="{true: 'nav-active', false: 'inactive'}
-            [isPromoListActive || isPromoNewActive || isPromoNew1Active || isPromoNew2Active || isPromoNew3Active || isPromoNew4Active || isReadOnly1Active ]">
+            ng-class="{true: 'nav-active', false: 'inactive'} [isPromoListActive || isPromoNewActive ]">
           <a href="">
             <i class="fa fa-bar-chart"></i>
             <span>4-ROI Analysis</span>
@@ -33,22 +32,7 @@
             </li>
             <li ng-class="{true: 'active', false: 'inactive'}[isPromoNewActive]">
               <a href="#/promonew">Create new PoR</a>
-            </li>
-            <li ng-class="{true: 'active', false: 'inactive'}[isPromoNew1Active]">
-              <a href="#/promonew1">No Touch New 1</a>
-            </li>
-            <li ng-class="{true: 'active', false: 'inactive'}[isPromoNew2Active]">
-              <a href="#/promonew2">No Touch New 2</a>
-            </li>    
-            <li ng-class="{true: 'active', false: 'inactive'}[isPromoNew3Active]">
-              <a href="#/promonew3">No Touch New 3</a>
-            </li>
-            <li ng-class="{true: 'active', false: 'inactive'}[isPromoNew4Active]">
-              <a href="#/promonew4">No Touch New 4</a>
-            </li> 
-            <li ng-class="{true: 'active', false: 'inactive'}[isReadOnly1Active]">
-              <a href="#/viewmode">View Mode</a>
-            </li>                   
+            </li>                  
           </ul>
         </li>
 

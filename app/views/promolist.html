@@ -21,19 +21,19 @@
 		<div class="left-side-inner">
 			<!--sidebar nav start-->
 			<ul class="nav nav-pills nav-stacked custom-nav">
-				<li class="menu-list">
-					<a href="#/promo"> <i class="fa fa-th"></i>
+				<li>
+					<a href=""> <i class="fa fa-th"></i>
 						<span>1-Budgeting & Planning</span>
 					</a>
 				</li>
 
-				<li class="menu-list">
+				<li>
 					<a href=""> <i class="fa fa-clock-o"></i>
 						<span>2-Contra Performance</span>
 					</a>
 				</li>
 
-				<li class="menu-list">
+				<li>
 					<a href="">
 						<i class="fa fa-balance-scale"></i>
 						<span>3-Competitive Pricing</span>
@@ -41,8 +41,7 @@
 				</li>
 
 				<li class="menu-list" 
-		            ng-class="{true: 'nav-active', false: 'inactive'}
-		            [isPromoListActive || isPromoNewActive || isPromoNew1Active || isPromoNew2Active || isPromoNew3Active || isPromoNew4Active || isReadOnly1Active ]">
+					ng-class="{true: 'nav-active', false: 'inactive'} [isPromoListActive || isNewPromoActive]">
 					<a href="">
 						<i class="fa fa-bar-chart"></i>
 						<span>4-ROI Analysis</span>
@@ -51,28 +50,13 @@
 						<li ng-class="{true: 'active', false: 'inactive'}[isPromoListActive]">
 							<a href="#/promolist">View/Edit PoRs</a>
 						</li>
-						<li ng-class="{true: 'active', false: 'inactive'}[isPromoNewActive]">
-							<a href="#/promonew">Create new PoR</a>
-						</li>
-						<li ng-class="{true: 'active', false: 'inactive'}[isPromoNew1Active]">
-							<a href="#/promonew1">No Touch New 1</a>
-						</li>
-						<li ng-class="{true: 'active', false: 'inactive'}[isPromoNew2Active]">
-							<a href="#/promonew2">No Touch New 2</a>
-						</li>
-						<li ng-class="{true: 'active', false: 'inactive'}[isPromoNew3Active]">
-							<a href="#/promonew3">No Touch New 3</a>
-						</li>
-						<li ng-class="{true: 'active', false: 'inactive'}[isPromoNew4Active]">
-							<a href="#/promonew4">No Touch New 4</a>
-						</li>
-						<li ng-class="{true: 'active', false: 'inactive'}[isReadOnly1Active]">
-							<a href="#/viewmode">View Mode</a>
+						<li ng-class="{true: 'active', false: 'inactive'}[isNewPromoActive]">
+							<a href="#/newpromo">Create New PoR</a>
 						</li>
 					</ul>
 				</li>
 
-				<li class="menu-list">
+				<li>
 					<a href="">
 						<i class="fa fa-signal"></i>
 						<span>5-Execute Campaign</span>
@@ -89,26 +73,26 @@
 				<li class="menu-list">
 					<a href="">
 						<i class="fa fa-briefcase"></i>
-						<span>Promo Approval</span>
+						<span>PoR Approval</span>
 					</a>
 					<ul class="sub-menu-list">
 						<li>
-							<a href="#/approval">Promo Approval</a>
+							<a href="#/promoapproval">PoR Approval</a>
 						</li>
 					</ul>
 				</li>
 
-				<li class="menu-list" ng-class="{true: 'nav-active', false: 'inactive'}[isApprovalActive]">
+				<li class="menu-list" ng-class="{true: 'nav-active', false: 'inactive'}[isNewPromoActive]">
 					<a href="">
 						<i class="fa fa-cogs"></i>
 						<span>Approver Management</span>
 					</a>
 					<ul class="sub-menu-list">
 						<li ng-class="{true: 'active', false: 'inactive'}[isApprovalActive]">
-							<a href="#/approver">Approver Group</a>
+							<a href="#/approvalgrouplist">Approval Group List</a>
 						</li>
-						<li>
-							<a href="#/approver/edit">Approver Edit</a>
+						<li ng-class="{true: 'active', false: 'inactive'}[isNewPromoActive]">
+							<a href="#/newapprovalgroup">New Approval Group</a>
 						</li>
 					</ul>
 				</li>
@@ -168,8 +152,8 @@
 										<button 
 											type="button" 
 											id="dropdownMenu1" 
-					    					data-toggle="dropdown" 
-					    					class="btn btn-default form-control ctm-content">
+											data-toggle="dropdown" 
+											class="btn btn-default form-control ctm-content">
 											<span class="btntext zselect">Choose Region...</span>
 											<span class="fa fa-chevron-down pull-right icon-blue" aria-hidden="true"></span>
 										</button>
@@ -204,8 +188,8 @@
 										<button 
 											type="button" 
 											id="dropdownMenu1" 
-					    					data-toggle="dropdown" 
-					    					class="btn btn-default form-control ctm-content">
+											data-toggle="dropdown" 
+											class="btn btn-default form-control ctm-content">
 											<span class="btntext zselect">Choose Subregion...</span>
 											<span class="fa fa-chevron-down pull-right icon-blue" aria-hidden="true"></span>
 										</button>
@@ -232,8 +216,8 @@
 										<button 
 											type="button" 
 											id="dropdownMenu1" 
-					    					data-toggle="dropdown" 
-					    					class="btn btn-default form-control ctm-content">
+											data-toggle="dropdown" 
+											class="btn btn-default form-control ctm-content">
 											<span class="btntext zselect">Choose PoR Status...</span>
 											<span class="fa fa-chevron-down pull-right icon-blue" aria-hidden="true"></span>
 										</button>
@@ -260,8 +244,8 @@
 										<button 
 											type="button" 
 											id="dropdownMenu1" 
-					    					data-toggle="dropdown" 
-					    					class="btn btn-default form-control ctm-content">
+											data-toggle="dropdown" 
+											class="btn btn-default form-control ctm-content">
 											<span class="btntext zselect">Choose BU...</span>
 											<span class="fa fa-chevron-down pull-right icon-blue" aria-hidden="true"></span>
 										</button>
@@ -296,8 +280,8 @@
 										<button 
 											type="button" 
 											id="dropdownMenu1" 
-					    					data-toggle="dropdown" 
-					    					class="btn btn-default form-control ctm-content">
+											data-toggle="dropdown" 
+											class="btn btn-default form-control ctm-content">
 											<span class="btntext zselect">Choose Country...</span>
 											<span class="fa fa-chevron-down pull-right icon-blue" aria-hidden="true"></span>
 										</button>
@@ -325,8 +309,8 @@
 										<button 
 											type="button" 
 											id="dropdownMenu1" 
-					    					data-toggle="dropdown" 
-					    					class="btn btn-default form-control ctm-content">
+											data-toggle="dropdown" 
+											class="btn btn-default form-control ctm-content">
 											<span class="btntext zselect">Choose Approval Status...</span>
 											<span class="fa fa-chevron-down pull-right icon-blue" aria-hidden="true"></span>
 										</button>

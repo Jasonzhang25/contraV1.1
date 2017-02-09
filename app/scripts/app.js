@@ -18,7 +18,8 @@ angular
     'ngTouch',
     'angular-loading-bar',
     'ui.bootstrap',
-    'ui.grid'
+    'ui.grid',
+    'frapontillo.bootstrap-switch'
 
   ])
   .config(function ($routeProvider) {

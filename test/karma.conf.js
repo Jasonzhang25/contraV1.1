@@ -29,6 +29,11 @@ module.exports = function(config) {
       'bower_components/angular-route/angular-route.js',
       'bower_components/angular-sanitize/angular-sanitize.js',
       'bower_components/angular-touch/angular-touch.js',
+      'bower_components/bootstrap-switch/dist/js/bootstrap-switch.js',
+      'bower_components/angular-bootstrap-switch/dist/angular-bootstrap-switch.js',
+      'bower_components/angular-ui-grid/ui-grid.js',
+      'bower_components/angular-bootstrap/ui-bootstrap-tpls.js',
+      'bower_components/angular-loading-bar/build/loading-bar.js',
       'bower_components/angular-mocks/angular-mocks.js',
       // endbower
       'app/scripts/**/*.js',

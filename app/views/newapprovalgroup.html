@@ -1,0 +1,133 @@
+<link rel="stylesheet" href="styles/left-menu.css"/>
+<script src="scripts/modernizr.min.js"></script>
+<script src="scripts/jquery.nicescroll.js"></script>
+<script src="scripts/left-menu.js"></script>
+
+<section class="sticky-header">
+	<!-- left side start-->
+	<div class="left-side sticky-left-side left-menu-body">
+		<!--logo and iconic logo start-->
+		<div class="logo">
+			<a href="#/">
+				<img src="images/HPE_logo.png" alt=""></a>
+		</div>
+
+		<div class="logo-icon text-center">
+			<a href="#/">
+				<img src="images/logo_icon.png" alt=""></a>
+		</div>
+		<!--logo and iconic logo end-->
+		<!--<leftmenu-directive></leftmenu-directive>-->
+		<div class="left-side-inner">
+			<!--sidebar nav start-->
+			<ul class="nav nav-pills nav-stacked custom-nav">
+				<li>
+					<a href="#/promo"> <i class="fa fa-th"></i>
+						<span>1-Budgeting & Planning</span>
+					</a>
+				</li>
+
+				<li>
+					<a href=""> <i class="fa fa-clock-o"></i>
+						<span>2-Contra Performance</span>
+					</a>
+				</li>
+
+				<li>
+					<a href="">
+						<i class="fa fa-balance-scale"></i>
+						<span>3-Competitive Pricing</span>
+					</a>
+				</li>
+
+				<li class="menu-list" 
+					ng-class="{true: 'nav-active', false: 'inactive'}
+					[isPromoListActive || isPromoNewActive || isPromoNew1Active || isPromoNew2Active || isPromoNew3Active || isPromoNew4Active || isReadOnly1Active ]">
+					<a href="">
+						<i class="fa fa-bar-chart"></i>
+						<span>4-ROI Analysis</span>
+					</a>
+					<ul class="sub-menu-list">
+						<li ng-class="{true: 'active', false: 'inactive'}[isPromoListActive]">
+							<a href="#/promolist">View/Edit PoRs</a>
+						</li>
+						<li ng-class="{true: 'active', false: 'inactive'}[isPromoNewActive]">
+							<a href="#/promonew">Create New PoR</a>
+						</li>
+					</ul>
+				</li>
+
+				<li>
+					<a href="">
+						<i class="fa fa-signal"></i>
+						<span>5-Execute Campaign</span>
+					</a>
+				</li>
+
+				<li>
+					<a href="">
+						<i class="fa fa-dashboard"></i>
+						<span>6-Weekly Tracking</span>
+					</a>
+				</li>
+
+				<li class="menu-list">
+					<a href="">
+						<i class="fa fa-briefcase"></i>
+						<span>PoR Approval</span>
+					</a>
+					<ul class="sub-menu-list">
+						<li>
+							<a href="#/porapproval">PoR Approval</a>
+						</li>
+					</ul>
+				</li>
+
+				<li class="menu-list" ng-class="{true: 'nav-active', false: 'inactive'}[isApprovalActive]">
+					<a href="">
+						<i class="fa fa-cogs"></i>
+						<span>Approver Management</span>
+					</a>
+					<ul class="sub-menu-list">
+						<li ng-class="{true: 'active', false: 'inactive'}[isApprovalActive]">
+							<a href="#/approvalgrouplist">Approval Group List</a>
+						</li>
+						<li>
+							<a href="#/newapprovalgroup">New Approval Group</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<!--sidebar nav end-->
+		</div>
+	</div>
+	<!-- left side end-->
+
+	<!-- main content start-->
+	<div class="main-content" >
+		<!-- header section start-->
+		<div class="header-section">
+			<!--toggle button start-->
+			<a class="toggle-btn">
+				<i class="fa fa-bars"></i>
+			</a>
+			<!--toggle button end-->
+			<span class="droid-icon">
+				<img src="images/droid.png" class="projecticon">
+			</span>
+
+			<!--toggle button end-->
+			<div class="menu-right">
+				<i class="fa fa-user"></i>
+				<span>Jason Zhang(Administrator)</span>
+			</div>
+		</div>
+		<!-- header section end-->
+
+		<!--body wrapper start-->
+		<div class="wrapper">
+		 	<p>New approval group page, add your code here.</p>
+		</div>
+	</div>
+	<!--main content end-->
+</section>

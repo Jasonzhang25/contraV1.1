@@ -383,6 +383,13 @@
 			</div>
 
 			<div id="grid1" ui-grid="gridOptions" class="grid top-margin5" ui-grid-auto-resize></div>
+
+			<ul>
+				<li ng-repeat="x in names">
+					{{ x.Name + ', ' + x.Country }}
+				</li>
+			</ul>
+
 		</div>
 	</div>
 	<!--main content end-->

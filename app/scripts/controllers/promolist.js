@@ -8,12 +8,20 @@
  * Controller of the contraApp
  */
 angular.module('contraApp')
-.controller('PromolistCtrl', function($scope) {
+.controller('PromolistCtrl', function($scope,$http) {
     $scope.isPromoListActive = true;
 	$scope.status = {
 	    open: true
   	};
 
+    $http.get('data/promolist.json').then(function(result){
+        $scope.promolistPayload = result.data;
+        alert(JSON.stringify(result));
+        console.log(result);
+    }
+    );
+
+/*
     $scope.myData = [{promo_id : "10011", promo_title: "Jason Testing", gbu: "HP Networking", fyq: "2017Q1", status: "Draft", last_modified:"10/21/2016 8:31 AM", approvol_status: "Approved", owner: "Jason Zhang"},
                     {promo_id : "10012", promo_title: "Jason Testing", gbu: "HP Networking", fyq: "2017Q1", status: "Draft", last_modified:"10/21/2016 8:31 AM", approvol_status: "Approved", owner: "Jason Zhang"},
                     {promo_id : "10013", promo_title: "Jason Testing", gbu: "HP Networking", fyq: "2017Q1", status: "Draft", last_modified:"10/21/2016 8:31 AM", approvol_status: "Approved", owner: "Jason Zhang"},
@@ -25,21 +33,21 @@ angular.module('contraApp')
                     {promo_id : "10019", promo_title: "Jason Testing", gbu: "HP Networking", fyq: "2017Q1", status: "Draft", last_modified:"10/21/2016 8:31 AM", approvol_status: "Approved", owner: "Jason Zhang"},
                     {promo_id : "10010", promo_title: "Jason Testing", gbu: "HP Networking", fyq: "2017Q1", status: "Draft", last_modified:"10/21/2016 8:31 AM", approvol_status: "Approved", owner: "Jason Zhang"}
                     ];
-
+*/
     $scope.gridOptions = { 
-        data: 'myData',
+        data: 'promolistPayload',
         enableCellSelection: true,
         enableRowSelection: true,
         enableCellEditOnFocus: true,
-        columnDefs: [{field: 'promo_id', displayName: 'Prod.Id', minWidth:150}, 
-                     {field:'promo_title', displayName:'POR Title', minWidth:150},
-                     {field:'gbu', displayName:'BU', minWidth:150},
+        columnDefs: [{field: 'id', displayName: 'Prod.Id', minWidth:150}, 
+                     {field:'title', displayName:'POR Title', minWidth:150},
+                     {field:'bu', displayName:'BU', minWidth:150},
                      {field:'fyq', displayName:'FYQ', minWidth:120},
                      {field:'status', displayName:'Status', minWidth:120},
-                     {field:'last_modified', displayName:'Last Modified', minWidth:120},
-                     {field:'approvol_status', displayName:'Approval Status', minWidth:120},
+                     {field:'lastmodify', displayName:'Last Modified', minWidth:120},
+                     {field:'approvalstatus', displayName:'Approval Status', minWidth:120},
                      {field:'owner', displayName:'Owner', minWidth:200},
-                     {field:'owner', displayName:'Owner', minWidth:200}                     
+                     {field:'email', displayName:'Owner', minWidth:200}                     
                     ]
     };
 
